@@ -6,9 +6,15 @@
 }
 
 body {
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', sans-serif;
-    }
+  background-color: #f8f9fa;
+  font-family: "Raleway", sans-serif;
+}
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .mainmenu {
   background-color: var(--color1);
@@ -61,7 +67,6 @@ body {
   cursor: pointer;
 }
 
-
 .card-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -83,4 +88,40 @@ body {
 .card-body .fw-bold {
   font-size: 1.25rem;
   color: var(--color1);
+}
+
+.centerimg {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive page improvements */
+.hero-section img {
+  height: 100%;
+  min-height: 320px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 55vh;
+  }
+
+  .match-teams {
+    width: 100%;
+  }
+
+  .bg-gray-900 .flex {
+    justify-content: center;
+  }
+
+  .bg-gray-900 .flex img {
+    width: 5.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .relative.overflow-x-auto {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
 }

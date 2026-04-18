@@ -11,14 +11,151 @@
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="assets/images/sansalvador.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div id="header"></div>
     <footer id="footer"></footer>
-    <div class="relative w-full overflow-hidden">
-        <img src="assets/images/slide4.jpg" class="w-full h-screen flex-shrink-0 object-cover">
+    <div class="relative w-full overflow-hidden hero-section h-[70vh] sm:h-[75vh] md:h-[85vh]">
+        <img src="assets/images/slide4.jpg" class="w-full h-full flex-shrink-0 object-cover">
     </div>
+
+
+    <div
+        class="grid m-8 bg-white border border-default rounded-base shadow-xs md:mb-12 md:grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 -mt-32 relative z-10">
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center border-b border-default rounded-t-base md:rounded-t-none md:rounded-ss-base md:border-e">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-body lg:mb-8">
+                <h3 class="text-lg font-semibold text-heading my-4">Siguiente encuentro</h3>
+                <p class="">Primera división</p>
+                <p class="font-bold">Jornada #6</p>
+                <p>19 de abril 2026 07:00 AM</p>
+                <em>Estadio nacional Mágico González</em>
+            </blockquote>
+            <div class="match-teams flex flex-col items-center justify-center gap-6 sm:flex-row sm:justify-between">
+                <div>
+                    <img src="assets/images/team1.png" alt="Team Logo" class="w-16 centerimg">
+                    <h4 class="font-semibold">CDLA Firpo</h4>
+                </div>
+                <h5 class="font-semibold">VS</h5>
+                <div>
+                    <img src="assets/images/sansalvador.png" alt="Team Logo" class="w-16 centerimg">
+                    <h4 class="font-semibold">San Salvador FC</h4>
+                </div>
+            </div>
+        </figure>
+        <figure
+            class="flex flex-col items-center justify-center p-8 text-center border-b border-default md:rounded-se-base">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-body lg:mb-8">
+                <h3 class="text-lg font-semibold text-heading">Tabla de posiciones</h3>
+                <div class="relative overflow-x-auto">
+                    <table class="w-full text-sm text-left rtl:text-right text-body">
+                        <thead class="text-sm text-body bg-neutral-secondary-medium">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 rounded-s-base font-medium">
+                                    Pos
+                                </th>
+                                <th scope="col" class="px-6 py-3 rounded-s-base font-medium">
+                                    Pts
+                                </th>
+                                <th scope="col" class="px-6 py-3 font-medium">
+                                    P
+                                </th>
+                                <th scope="col" class="px-6 py-3 rounded-e-base font-medium">
+                                    GD
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-neutral-primary">
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    1
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    <div class="flex">
+                                        <img src="assets/images/team1.png" class="w-6 mr-1">
+                                        <div>CDLA Firpo</div>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 font-semibold">
+                                    12
+                                </td>
+                                <td class="px-6 py-4">
+                                    7
+                                </td>
+                            </tr>
+                            <tr class="bg-neutral-primary">
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    2
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    <div class="flex">
+                                        <img src="assets/images/sansalvador.png" class="w-6 mr-1">
+                                        <div>San Salvador FC</div>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 font-semibold">
+                                    10
+                                </td>
+                                <td class="px-6 py-4">
+                                    12
+                                </td>
+                            </tr>
+                            <tr class="bg-neutral-primary">
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    3
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                                    <div class="flex">
+                                        <img src="assets/images/team2.png" class="w-6 mr-1">
+                                        <div>CD FAS</div>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 font-semibold">
+                                    9
+                                </td>
+                                <td class="px-6 py-4">
+                                    4
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </blockquote>
+        </figure>
+    </div>
+    <div class="relative w-full h-[500px]">
+        <img src="assets/images/slide1.jpg" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-wide">
+                Primer equipo masculino
+            </h1>
+            <p class="mt-3 text-lg md:text-xl text-gray-200">
+                Conoce todo el equipo, desde los jugadores y cuerpo técnico #PanterasDeSanSalvador
+            </p>
+            <button class="mt-6 bg-black px-6 py-2 rounded-md font-semibold hover:bg-red-700 transition">
+                Detalles
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-gray-900 p-8 mb-12 mx-auto px-4 sm:px-6 ">
+        <h2 class="text-2xl font-bold mb-4 text-white text-center">Nuestros patrocinadores</h2>
+        <div class="items-center justify-center flex flex-wrap gap-8">
+            <img src="assets/images/brand3.png" alt="Sponsors" class="w-24 h-auto object-cover">
+            <img src="assets/images/brand1.png" alt="Sponsors" class="w-24 h-auto object-cover">
+            <img src="assets/images/brand2.png" alt="Sponsors" class="w-24 h-auto object-cover">
+            <img src="assets/images/brand4.png" alt="Sponsors" class="w-24 h-auto object-cover">
+        </div>
+    </div>
+
     <!--<div class="relative w-full overflow-hidden">
         <div id="carousel" class="flex transition-transform duration-500 h-2/3">
             <img src="assets/images/slide2.jpg" class="w-full h-full flex-shrink-0 object-cover">
@@ -41,6 +178,7 @@
                 .then(r => r.text())
                 .then(data => {
                     document.getElementById("header").innerHTML = data;
+                    setupMobileMenu();
                 });
             fetch("src/layout/footer.html")
                 .then(r => r.text())
@@ -66,10 +204,18 @@
             index = (index - 1 + total) % total;
             updateSlide();
         }
+        function setupMobileMenu() {
+            const button = document.querySelector('#mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if (!button || !menu) return;
+
+            button.addEventListener('click', function () {
+                const isHidden = menu.classList.toggle('hidden');
+                menu.classList.toggle('block', !isHidden);
+                button.setAttribute('aria-expanded', String(!isHidden));
+            });
+        }
         setInterval(nextSlide, 5000);
-
-
-
     </script>
 </body>
 
