@@ -1,0 +1,32 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "San Salvador FC",
+      "shield": "",
+      "defeat": 0,
+      "win": 4
+    },
+    {
+      "id": 2,
+      "name": "CD FAS",
+      "shield": "",
+      "defeat": 1,
+      "win": 2
+    },
+    {
+      "id": 3,
+      "name": "Alianza FC",
+      "shield": "",
+      "defeat": 0,
+      "win": 3
+    },
+    {
+      "id": 4,
+      "name": "CD Águila",
+      "shield": "",
+      "defeat": 2,
+      "win": 1
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+:root {
+  --color1: #355872;
+  --color2: #7aaace;
+  --color3: #9cd5ff;
+  --color4: #f7f8f0;
+}
+
+body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+.mainmenu {
+  background-color: var(--color1);
+  color: var(--color4) !important;
+}
+.navbar-nav .nav-item a {
+  color: var(--color4);
+  text-decoration: none;
+  margin: 0 10px;
+}
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color3);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+.imageproducts {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Estilos para tarjetas */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+  cursor: pointer;
+}
+
+
+.card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 600;
+  color: var(--color1);
+}
+
+.card-text {
+  flex-grow: 1;
+  min-height: 40px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--color1);
+  font-size: 0.95rem;
+}
+
+.card-body .fw-bold {
+  font-size: 1.25rem;
+  color: var(--color1);
+}
