@@ -4,47 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer equipo - Sport Team</title>
-
+    <title>Primer equipo - San Salvador FC</title>
+    <base href="../../">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="assets/css/index.css">
-
-    <style>
-        /* Estilos para que las fotos se vean uniformes y profesionales */
-        .card-img-top {
-            height: 300px;
-            object-fit: cover;
-            background-color: #f0f0f0;
-        }
-        .card {
-            transition: transform 0.2s;
-            border: none;
-        }
-        .card:hover {
-            transform: scale(1.03);
-            z-index: 1;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="assets/images/sansalvador.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="bg-light">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 shadow">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Sport Team</a>
-            <div class="navbar-nav">
-                <a class="nav-link active" href="equipo.html">Equipo</a>
-                <a class="nav-link" href="noticias.html">Noticias</a>
-            </div>
-        </div>
-    </nav>
+    <!--Menu-->
+    <div id="header"></div>
 
     <div class="container">
         <h1 class="text-center mb-5 fw-bold">Nuestros Jugadores</h1>
-
         <div class="row">
-            
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <img src="assets/img/jug1.jpg" class="card-img-top" alt="Portero">
@@ -67,7 +47,7 @@
                 </div>
             </div>
 
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <img src="assets/img/jug3.jpg" class="card-img-top" alt="Portero">
                     <div class="card-body text-center">
@@ -89,7 +69,7 @@
                 </div>
             </div>
 
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <img src="assets/img/jug5.jpg" class="card-img-top" alt="Defensa">
                     <div class="card-body text-center">
@@ -100,7 +80,7 @@
                 </div>
             </div>
 
-             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <img src="assets/img/jug6.jpg" class="card-img-top" alt="Defensa">
                     <div class="card-body text-center">
@@ -133,7 +113,7 @@
                 </div>
             </div>
 
-<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card shadow-sm h-100">
                     <img src="assets/img/jug9.jpg" class="card-img-top" alt="Defensa">
                     <div class="card-body text-center">
@@ -166,6 +146,58 @@
                 </div>
             </div>
 
-        </div> </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //Cargar el header
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("src/layout/header.html")
+                .then(r => r.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                    setupMobileMenu();
+                });
+            fetch("src/layout/footer.html")
+                .then(r => r.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+            //Llamado de productos
+            fetch("assets/products.json")
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById("products-container");
+                    data.products.forEach(product => {
+                        const col = document.createElement("div");
+                        col.className = "col-md-3 col-lg-3 mb-4";
+                        col.innerHTML = `
+                        <div class="card p-1 shadow-sm">
+                            <img src="${product.image}" class="card-img-top imageproducts" alt="${product.name}">
+                            <div class="card-body d-flex text-center flex-column">
+                                <h6 class="card-title">${product.name}</h6>
+                                <p class="fw-bold">$${product.price}</p>
+                                <button class="btn btn-success mt-auto">Ver producto</button>
+                            </div>
+                        </div>
+                    `;
+                        container.appendChild(col);
+                    });
+                });
+        });
+
+        function setupMobileMenu() {
+            const button = document.querySelector('#mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if (!button || !menu) return;
+
+            button.addEventListener('click', function () {
+                const isHidden = menu.classList.toggle('hidden');
+                menu.classList.toggle('block', !isHidden);
+                button.setAttribute('aria-expanded', String(!isHidden));
+            });
+        }
+    </script>
 </body>
+
 </html>
