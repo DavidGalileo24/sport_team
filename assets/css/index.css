@@ -43,6 +43,14 @@ body {
 .nav-link:hover::after {
   width: 100%;
 }
+
+.nav-link.active {
+  color: var(--color3);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
 .imageproducts {
   height: 200px;
   object-fit: cover;
